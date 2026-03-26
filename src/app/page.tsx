@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { Zap, Globe, BarChart3, Rocket } from "lucide-react";
 import Founders from "@/components/Founders";
 import Marquee from "@/components/Marquee";
@@ -24,7 +24,7 @@ export default function Home() {
       opacity: 1, 
       transition: { type: "spring", damping: 20, stiffness: 100 } 
     },
-  };
+  } as const;
 
   // PREMIUM OUT-OF-THE-BOX ANIMATION: "THE GHOST TRACKING"
   // On hover, the letters expand and a subtle secondary layer "echoes" the movement
@@ -32,19 +32,19 @@ export default function Home() {
     initial: { letterSpacing: "-0.05em", opacity: 1 },
     hover: {
       letterSpacing: "0.05em",
-      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
+      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as any }
     }
   };
 
-  const echoAnimation = {
-    initial: { opacity: 0, x: 0, skewX: 0 },
-    hover: {
-      opacity: [0, 0.3, 0],
-      x: [0, 60, 100],
-      skewX: [0, -30, -60],
-      transition: { duration: 0.9, ease: "easeOut" }
-    }
-  };
+  const echoAnimation: Variants = {
+      initial: { opacity: 0, x: 0, skewX: 0 },
+      hover: {
+        opacity: [0, 0.3, 0],
+        x: [0, 60, 100],
+        skewX: [0, -30, -60],
+        transition: { duration: 0.9, ease: "easeOut" }
+      }
+    };
 
   return (
     <main className="relative min-h-screen bg-[#050505] text-white overflow-x-hidden selection:bg-cyan-500/30">
