@@ -81,7 +81,7 @@ export default function Process() {
             whileInView={{ opacity: 0.16, scale: 1, x: 0 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             viewport={{ once: false, amount: 0.3 }}
-            className={`text-[15vw] font-black ${service.color} absolute select-none tracking-tighter uppercase whitespace-nowrap z-0 inline-block scale-x-110 md:scale-x-125`}
+            className={`text-[15vw] font-black ${service.color} absolute select-none tracking-tighter uppercase whitespace-nowrap z-0 inline-block scale-x-110 md:scale-x-125 blur-[0.2px] drop-shadow-[0_0_18px_rgba(255,255,255,0.06)]`}
           >
             {service.bgText}
           </motion.h2>
@@ -92,12 +92,12 @@ export default function Process() {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             viewport={{ once: false, amount: 0.4 }}
-            className="relative z-10 text-center px-6"
+            className="relative z-10 text-center px-6 before:absolute before:inset-[-20px] before:-z-10 before:bg-cyan-500/5 before:blur-3xl before:rounded-full"
           >
             <span className={`${service.color} font-mono text-[10px] md:text-xs tracking-[0.6em] mb-6 block uppercase`}>
               {service.label}
             </span>
-            <h3 className="text-5xl md:text-8xl font-black mb-6 italic uppercase tracking-tighter text-white">
+            <h3 className="text-5xl md:text-8xl font-black mb-6 italic uppercase tracking-tighter text-white drop-shadow-[0_0_18px_rgba(255,255,255,0.06)]">
               {service.id}. {service.title}
             </h3>
             <p className="text-zinc-500 text-base md:text-xl max-w-2xl mx-auto font-light leading-relaxed">

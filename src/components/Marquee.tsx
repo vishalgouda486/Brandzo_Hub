@@ -34,7 +34,7 @@ export default function Marquee() {
         {[...services, ...services].map((service, index) => (
           <div
             key={index}
-            className="flex items-center px-10 text-4xl md:text-6xl font-black tracking-tighter text-zinc-500 hover:text-cyan-400 transition-colors cursor-default"
+            className="flex items-center px-10 text-4xl md:text-6xl font-black tracking-tighter text-zinc-500 hover:text-cyan-400 hover:brightness-100 transition-all duration-300 cursor-default"
           >
             <span className="mr-8 text-cyan-900">•</span>
             {service.toUpperCase()}

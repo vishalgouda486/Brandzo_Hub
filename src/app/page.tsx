@@ -71,7 +71,7 @@ export default function Home() {
               {/* The "Echo" Layer - Animates once out to the right */}
               <motion.h1 
                 variants={echoAnimation}
-                className="absolute inset-0 text-7xl md:text-[11rem] font-black leading-[0.8] tracking-tighter italic uppercase pointer-events-none text-cyan-400 select-none"
+                className="absolute inset-0 text-7xl md:text-[11rem] font-black leading-[0.8] tracking-tighter italic uppercase pointer-events-none text-cyan-400 select-none blur-[0.3px] drop-shadow-[0_0_20px_rgba(6,182,212,0.18)]"
               >
                 Brandzo <br /> Hub
               </motion.h1>
@@ -79,7 +79,7 @@ export default function Home() {
               {/* The Main Layer - Variable Tracking */}
               <motion.h1 
                 variants={letterAnimation}
-                className="relative text-7xl md:text-[11rem] font-black leading-[0.8] tracking-tighter italic uppercase mb-6 z-10"
+                className="relative text-7xl md:text-[11rem] font-black leading-[0.8] tracking-tighter italic uppercase mb-6 z-10 drop-shadow-[0_0_18px_rgba(255,255,255,0.05)]"
               >
                 Brandzo <br />
                 <span className="text-cyan-400">Hub</span><span className="text-white">.</span>
@@ -114,10 +114,10 @@ export default function Home() {
           {/* Bento Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-20">
             {[
-              { title: "Ad Sync", icon: Zap, color: "hover:border-cyan-500", shadow: "hover:shadow-[0_0_40px_-10px_rgba(6,182,212,0.2)]", desc: "Cross-platform data synchronization for Meta and Google." },
-              { title: "Local SEO", icon: Globe, color: "hover:border-blue-500", shadow: "hover:shadow-[0_0_40px_-10px_rgba(59,130,246,0.2)]", desc: "Aggressive local map-pack and search cluster dominance." },
-              { title: "Content", icon: Rocket, color: "hover:border-purple-500", shadow: "hover:shadow-[0_0_40px_-10px_rgba(168,85,247,0.2)]", desc: "Cinematic promo assets and narrative-driven growth." },
-              { title: "WhatsApp", icon: BarChart3, color: "hover:border-zinc-500", shadow: "hover:shadow-[0_0_40px_-10px_rgba(255,255,255,0.1)]", desc: "Automated precision outreach to key decision makers." },
+              { title: "Ad Sync", icon: Zap, color: "hover:border-cyan-400", shadow: "shadow-[0_0_0_rgba(0,0,0,0)] hover:shadow-[0_0_28px_-12px_rgba(6,182,212,0.22)]", desc: "Cross-platform data synchronization for Meta and Google." },
+              { title: "Local SEO", icon: Globe, color: "hover:border-blue-400", shadow: "shadow-[0_0_28px_-12px_rgba(59,130,246,0.22)]", desc: "Aggressive local map-pack and search cluster dominance." },
+              { title: "Content", icon: Rocket, color: "hover:border-purple-400", shadow: "shadow-[0_0_28px_-12px_rgba(168,85,247,0.22)]", desc: "Cinematic promo assets and narrative-driven growth." },
+              { title: "WhatsApp", icon: BarChart3, color: "hover:border-zinc-400", shadow: "shadow-[0_0_28px_-12px_rgba(255,255,255,0.12)]", desc: "Automated precision outreach to key decision makers." },
             ].map((box, i) => (
               <motion.div 
                 key={i}

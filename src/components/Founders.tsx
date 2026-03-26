@@ -35,8 +35,11 @@ export default function Founders() {
   const [selectedFounder, setSelectedFounder] = useState<null | typeof founders[0]>(null);
 
   useEffect(() => {
-    if (selectedFounder) document.body.style.overflow = 'hidden';
-    else document.body.style.overflow = 'unset';
+    document.body.style.overflow = selectedFounder ? "hidden" : "unset";
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
   }, [selectedFounder]);
 
   return (
@@ -82,7 +85,7 @@ export default function Founders() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
             transition={{ delay: i * 0.1, duration: 0.5 }}
-            className="group relative p-12 bg-zinc-900/10 border border-zinc-800/50 rounded-[3.5rem] cursor-pointer hover:border-cyan-500/50 transition-colors duration-500 overflow-hidden"
+            className="group relative p-12 bg-zinc-900/10 border border-zinc-800/50 rounded-[3.5rem] cursor-pointer hover:border-cyan-400/60 hover:shadow-[0_0_28px_-12px_rgba(6,182,212,0.22)] transition-all duration-500 overflow-hidden"
           >
             <div className="mb-12 flex justify-between items-start">
               <div className="p-4 bg-zinc-950 rounded-2xl border border-zinc-800 group-hover:border-cyan-500/30 transition-colors">

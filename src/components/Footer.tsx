@@ -10,21 +10,21 @@ export default function Footer() {
       href: "mailto:brandzohubb@gmail.com", 
       label: "Email Us", 
       sub: "brandzohubb@gmail.com",
-      color: "hover:border-cyan-500/50"
+      color: "hover:border-cyan-400/60 hover:shadow-[0_0_24px_-12px_rgba(6,182,212,0.22)]"
     },
     { 
       Icon: MessageSquare, 
       href: "https://wa.me/917624815112", 
       label: "WhatsApp", 
       sub: "Instant Chat",
-      color: "hover:border-emerald-500/50"
+      color: "hover:border-emerald-400/60 hover:shadow-[0_0_24px_-12px_rgba(16,185,129,0.22)]"
     },
     { 
       Icon: Phone, 
       href: "tel:+917624815112", 
       label: "Call Support", 
       sub: "Direct Line",
-      color: "hover:border-blue-500/50"
+      color: "hover:border-blue-400/60 hover:shadow-[0_0_24px_-12px_rgba(59,130,246,0.22)]"
     }
   ];
 
@@ -108,7 +108,7 @@ export default function Footer() {
                   <motion.li key={i} whileHover={{ x: 10 }}>
                     <a 
                       href={item.href} 
-                      className="group flex items-center gap-4 text-3xl font-black text-zinc-400 hover:text-cyan-400 transition-all italic uppercase tracking-tighter"
+                      className="group flex items-center gap-4 text-3xl font-black text-zinc-400 hover:text-cyan-400 hover:brightness-125 transition-all italic uppercase tracking-tighter"
                     >
                       {item.name}
                       <ArrowUpRight size={24} className="opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all" />

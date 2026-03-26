@@ -1,43 +1,53 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
-import { motion, useSpring, useMotionValue } from 'framer-motion';
+import React, { useEffect, useState } from "react";
+import { motion, useSpring, useMotionValue } from "framer-motion";
 
 const Cursor = () => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   const springConfig = { damping: 20, stiffness: 200 };
   const cursorX = useSpring(mouseX, springConfig);
   const cursorY = useSpring(mouseY, springConfig);
 
   useEffect(() => {
+    const checkDevice = () => {
+      setIsDesktop(window.innerWidth >= 1024 && !("ontouchstart" in window));
+    };
+
+    checkDevice();
+    window.addEventListener("resize", checkDevice);
+
     const moveMouse = (e: MouseEvent) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
     };
 
-    const handleHover = () => setIsHovered(true);
-    const handleUnhover = () => setIsHovered(false);
+    const handleMouseOver = (e: Event) => {
+      const target = e.target as HTMLElement;
+      if (target.closest("button, a, .group")) {
+        setIsHovered(true);
+      } else {
+        setIsHovered(false);
+      }
+    };
 
-    window.addEventListener("mousemove", moveMouse);
-    
-    // Magnetic target detection
-    const targets = document.querySelectorAll("button, a, .group");
-    targets.forEach(t => {
-      t.addEventListener("mouseenter", handleHover);
-      t.addEventListener("mouseleave", handleUnhover);
-    });
+    if (window.innerWidth >= 1024) {
+      window.addEventListener("mousemove", moveMouse);
+      document.addEventListener("mouseover", handleMouseOver);
+    }
 
     return () => {
+      window.removeEventListener("resize", checkDevice);
       window.removeEventListener("mousemove", moveMouse);
-      targets.forEach(t => {
-        t.removeEventListener("mouseenter", handleHover);
-        t.removeEventListener("mouseleave", handleUnhover);
-      });
+      document.removeEventListener("mouseover", handleMouseOver);
     };
   }, [mouseX, mouseY]);
+
+  if (!isDesktop) return null;
 
   return (
     <motion.div
@@ -49,20 +59,22 @@ const Cursor = () => {
         translateY: "-50%",
       }}
     >
-      {/* Magnetic Outer Ring */}
       <motion.div
         animate={{
-          scale: isHovered ? 2.5 : 1,
-          // Change "transparent" to this RGBA value
-          backgroundColor: isHovered ? "rgba(6, 182, 212, 0.2)" : "rgba(6, 182, 212, 0)",
+          scale: isHovered ? 2 : 1,
+          backgroundColor: isHovered
+            ? "rgba(6, 182, 212, 0.12)"
+            : "rgba(6, 182, 212, 0)",
+          borderColor: isHovered
+            ? "rgba(34, 211, 238, 0.6)"
+            : "rgba(34, 211, 238, 0.3)",
         }}
         transition={{ type: "spring", damping: 25, stiffness: 300 }}
-        className="w-8 h-8 rounded-full border border-cyan-500/30"
+        className="w-8 h-8 rounded-full border"
       />
-      {/* Center Dot */}
-      <div className="absolute w-1 h-1 bg-white rounded-full" />
+      <div className="absolute w-1.5 h-1.5 bg-white rounded-full" />
     </motion.div>
   );
-}
+};
 
 export default Cursor;

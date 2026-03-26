@@ -103,7 +103,7 @@ export default function Work() {
                 ease: [0.215, 0.61, 0.355, 1] 
               }}
               viewport={{ once: false, amount: 0.1 }}
-              className="group relative bg-zinc-900/10 border border-zinc-800/50 rounded-[2.5rem] overflow-hidden hover:border-cyan-500/40 transition-all duration-500"
+              className="group relative bg-zinc-900/10 border border-zinc-800/50 rounded-[2.5rem] overflow-hidden hover:border-cyan-400/60 hover:shadow-[0_0_50px_-12px_rgba(6,182,212,0.35)] transition-all duration-500"
             >
               <div className={`h-48 w-full bg-gradient-to-br ${item.color} to-transparent relative flex items-center justify-center overflow-hidden`}>
                 <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 100 100">
