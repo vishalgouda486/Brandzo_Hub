@@ -29,18 +29,39 @@
   }
 }
 
-/* 3. HARD-CODED GLOWS (Vercel cannot strip these) */
+/* 3. PRODUCTION-SAFE GLOWS */
 .shadow-glow {
-  box-shadow: 0 0 20px rgba(6, 182, 212, 0.5) !important;
+  box-shadow:
+    0 0 10px rgba(6, 182, 212, 0.25),
+    0 0 20px rgba(6, 182, 212, 0.35),
+    0 0 40px rgba(6, 182, 212, 0.25) !important;
+  -webkit-box-shadow:
+    0 0 10px rgba(6, 182, 212, 0.25),
+    0 0 20px rgba(6, 182, 212, 0.35),
+    0 0 40px rgba(6, 182, 212, 0.25) !important;
 }
 
 .shadow-blue-glow {
-  box-shadow: 0 0 25px rgba(59, 130, 246, 0.6) !important;
+  box-shadow:
+    0 0 10px rgba(59, 130, 246, 0.25),
+    0 0 25px rgba(59, 130, 246, 0.45),
+    0 0 45px rgba(59, 130, 246, 0.25) !important;
+  -webkit-box-shadow:
+    0 0 10px rgba(59, 130, 246, 0.25),
+    0 0 25px rgba(59, 130, 246, 0.45),
+    0 0 45px rgba(59, 130, 246, 0.25) !important;
 }
 
-/* Hover effect for the marquee/tiles */
+/* Hover glow for marquee / cards / tiles */
 .hover-blue-glow:hover {
-  box-shadow: 0 0 25px rgba(59, 130, 246, 0.6) !important;
+  box-shadow:
+    0 0 10px rgba(59, 130, 246, 0.25),
+    0 0 25px rgba(59, 130, 246, 0.45),
+    0 0 45px rgba(59, 130, 246, 0.25) !important;
+  -webkit-box-shadow:
+    0 0 10px rgba(59, 130, 246, 0.25),
+    0 0 25px rgba(59, 130, 246, 0.45),
+    0 0 45px rgba(59, 130, 246, 0.25) !important;
   transition: box-shadow 0.3s ease;
 }
 
