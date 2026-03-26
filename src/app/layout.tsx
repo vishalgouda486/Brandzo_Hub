@@ -1,6 +1,6 @@
+import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
 import Cursor from "@/components/Cursor";
 import ProgressBar from "@/components/ProgressBar"; // Import here
 

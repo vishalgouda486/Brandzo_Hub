@@ -7,6 +7,7 @@ import Marquee from "@/components/Marquee";
 import Footer from "@/components/Footer";
 import Process from "@/components/Process";
 import Work from "@/components/Work";
+import "./globals.css";
 
 export default function Home() {
   const container = {
