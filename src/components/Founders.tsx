@@ -161,7 +161,7 @@ export default function Founders() {
             </div>
 
             {/* Name */}
-            <h3 className={`text-4xl md:text-[2.6rem] font-black text-white mb-4 uppercase italic tracking-tighter transition-colors group-hover:${founder.accent} relative z-10`}>
+            <h3 className={`text-4xl md:text-[2.6rem] font-black text-white mb-4 uppercase italic tracking-tighter transition-colors relative z-10`}>
               {founder.name}
             </h3>
 
@@ -190,7 +190,7 @@ export default function Founders() {
       {/* Modal */}
       <AnimatePresence>
         {selectedFounder && (
-          <div className="fixed inset-0 z-[1000] flex items-center justify-center p-4 md:p-12">
+          <div className="fixed inset-0 z-[1000] flex items-start md:items-center justify-center pt-24 md:pt-0 p-4 md:p-12">
             {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
@@ -207,20 +207,20 @@ export default function Founders() {
                 duration: 0.5,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="relative w-full max-w-5xl max-h-[88vh] bg-zinc-950/50 backdrop-blur-3xl border border-white/10 rounded-[3rem] md:rounded-[4rem] shadow-[0_0_80px_rgba(0,0,0,0.45)] flex flex-col overflow-hidden"
+              className="relative w-full max-w-5xl max-h-[78vh] md:max-h-[88vh] bg-zinc-950/50 backdrop-blur-3xl border border-white/10 rounded-[2rem] md:rounded-[4rem] shadow-[0_0_80px_rgba(0,0,0,0.45)] flex flex-col overflow-hidden"
             >
               {/* Modal Header */}
-              <div className="p-8 md:p-14 pb-8 flex justify-between items-center border-b border-white/5 bg-white/[0.015]">
-                <div className="flex items-center gap-6 md:gap-8">
-                  <div className="p-4 bg-black/40 rounded-2xl border border-white/10 text-cyan-400">
+              <div className="p-6 md:p-14 pb-6 md:pb-8 flex justify-between items-center border-b border-white/5 bg-white/[0.015]">
+                <div className="flex items-center gap-4 md:gap-8">
+                  <div className="p-3 md:p-4 bg-black/40 rounded-2xl border border-white/10 text-cyan-400">
                     {selectedFounder.icon}
                   </div>
 
                   <div>
-                    <h3 className="text-2xl md:text-5xl font-black text-white uppercase tracking-tighter leading-none">
+                    <h3 className="text-xl md:text-5xl font-black text-white uppercase tracking-tighter leading-none">
                       {selectedFounder.name}
                     </h3>
-                    <p className="text-cyan-400 font-mono text-[10px] tracking-[0.3em] uppercase mt-2">
+                    <p className="text-cyan-400 font-mono text-[9px] md:text-[10px] tracking-[0.25em] md:tracking-[0.3em] uppercase mt-2">
                       {selectedFounder.role}
                     </p>
                   </div>
@@ -228,29 +228,29 @@ export default function Founders() {
 
                 <button
                   onClick={() => setSelectedFounder(null)}
-                  className="p-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-white transition-all active:scale-95"
+                  className="p-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-white transition-all active:scale-95 shrink-0"
                 >
                   <X size={20} />
                 </button>
               </div>
 
               {/* Modal Content */}
-              <div className="flex-1 overflow-y-auto p-8 md:p-14 space-y-14">
+              <div className="flex-1 overflow-y-auto p-6 md:p-14 space-y-10 md:space-y-14">
                 <section>
-                  <h4 className="text-zinc-600 font-mono text-[9px] uppercase tracking-[0.5em] mb-6">
+                  <h4 className="text-zinc-600 font-mono text-[9px] uppercase tracking-[0.5em] mb-5 md:mb-6">
                     Strategic Mission
                   </h4>
-                  <p className="text-zinc-300 text-lg md:text-2xl leading-relaxed font-normal">
+                  <p className="text-zinc-300 text-base md:text-2xl leading-relaxed font-normal">
                     {selectedFounder.bio}
                   </p>
                 </section>
 
                 <section>
-                  <h4 className="text-zinc-600 font-mono text-[9px] uppercase tracking-[0.5em] mb-8">
+                  <h4 className="text-zinc-600 font-mono text-[9px] uppercase tracking-[0.5em] mb-6 md:mb-8">
                     Technical Impact
                   </h4>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     {selectedFounder.details.map((detail, idx) => (
                       <motion.div
                         key={idx}
@@ -261,13 +261,13 @@ export default function Founders() {
                           delay: 0.08 * idx,
                           ease: [0.16, 1, 0.3, 1],
                         }}
-                        className="flex flex-col p-7 md:p-8 bg-white/[0.025] rounded-[2.2rem] border border-white/5"
+                        className="flex flex-col p-6 md:p-8 bg-white/[0.025] rounded-[1.8rem] md:rounded-[2.2rem] border border-white/5"
                       >
                         <div className="mb-4 text-cyan-500 opacity-90">
                           {detail.icon}
                         </div>
 
-                        <h5 className="text-white font-bold text-base uppercase tracking-tight mb-2">
+                        <h5 className="text-white font-bold text-sm md:text-base uppercase tracking-tight mb-2">
                           {detail.label}
                         </h5>
 
@@ -281,17 +281,17 @@ export default function Founders() {
               </div>
 
               {/* Modal Footer */}
-              <div className="p-7 md:p-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center bg-black/20 gap-5 md:gap-6">
-                <div className="flex items-center gap-3 text-zinc-500">
-                  <ShieldCheck size={16} className="text-emerald-500" />
-                  <span className="text-[9px] font-mono uppercase tracking-[0.3em]">
+              <div className="p-6 md:p-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center bg-black/20 gap-4 md:gap-6">
+                <div className="flex items-center gap-3 text-zinc-500 text-center md:text-left">
+                  <ShieldCheck size={16} className="text-emerald-500 shrink-0" />
+                  <span className="text-[9px] font-mono uppercase tracking-[0.25em] md:tracking-[0.3em]">
                     Verified Growth Partner
                   </span>
                 </div>
 
                 <button
                   onClick={() => setSelectedFounder(null)}
-                  className="w-full md:w-auto px-10 md:px-12 py-4 md:py-5 bg-white text-black font-black text-[10px] uppercase tracking-[0.2em] rounded-full hover:bg-cyan-400 transition-all active:scale-95"
+                  className="w-full md:w-auto px-8 md:px-12 py-4 md:py-5 bg-white text-black font-black text-[10px] uppercase tracking-[0.2em] rounded-full hover:bg-cyan-400 transition-all active:scale-95"
                 >
                   Return to Dashboard
                 </button>
