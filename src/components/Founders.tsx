@@ -12,67 +12,64 @@ import {
   MousePointer2,
   Cpu,
   ArrowRight,
-  Sparkles,
 } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const founders = [
   {
     name: "Vishalgouda Patil",
-    role: "Lead Systems Architect",
-    specialty: "TECHNICAL INFRASTRUCTURE",
-    bio: "The engineering force behind the agency. I architect high-performance digital infrastructure that allows your business to scale without technical debt, ensuring every visitor journey is optimized for conversion.",
+    role: "Technical & Growth Systems Lead",
+    specialty: "WEBSITES • ADS • AUTOMATION",
+    bio: "I focus on building and managing the technical side of business growth — from websites and paid traffic to local visibility, WhatsApp systems, and lead-ready infrastructure.",
     details: [
       {
-        label: "Premium Web Deployment",
-        desc: "Developing ultra-fast, mobile-responsive storefronts. Not just 'sites', but high-conversion assets designed for sub-2-second load times.",
+        label: "Website Development & Maintenance",
+        desc: "Fast, premium business websites with ongoing updates, fixes, support, and long-term management.",
         icon: <Globe size={18} />,
       },
       {
-        label: "Local SEO Dominance",
-        desc: "Hard-coding your business into the 'Google Map Pack' and local search results to ensure you are the first choice in your territory.",
+        label: "Local SEO & Google Visibility",
+        desc: "Google Business Profile optimization and local SEO setup to improve discoverability and trust.",
         icon: <Search size={18} />,
       },
       {
-        label: "Full-Stack Ad Management",
-        desc: "Deploying and managing data-driven Meta & Google ad campaigns with precision targeting to maximize ROI.",
+        label: "Google & Meta Ads Management",
+        desc: "Lead-focused ad campaign setup and management built to bring high-intent traffic to your business.",
         icon: <MousePointer2 size={18} />,
       },
       {
-        label: "WhatsApp Bulk Ecosystems",
-        desc: "Implementing automated bulk messaging and lead-nurturing systems to keep your business top-of-mind instantly.",
+        label: "WhatsApp Systems & Lead Flow",
+        desc: "Bulk messaging, follow-up workflows, and automation designed to reduce missed leads and improve response speed.",
         icon: <MessageSquare size={18} />,
       },
     ],
     icon: <Terminal className="text-cyan-400" size={32} />,
-    glow: "shadow-[0_0_0_1px_rgba(6,182,212,0.18),0_0_20px_rgba(6,182,212,0.12)]",
-    hoverGlow: "hover:shadow-[0_0_40px_-12px_rgba(6,182,212,0.28)]",
-    border: "border-cyan-400/40",
-    accent: "text-cyan-400",
+    glow: "shadow-[0_0_0_1px_rgba(6,182,212,0.14),0_0_18px_rgba(6,182,212,0.10)]",
+    hoverGlow: "hover:shadow-[0_0_44px_-10px_rgba(6,182,212,0.32)]",
+    border: "border-cyan-400/25",
     badge: "bg-cyan-500/10 border-cyan-500/20 text-cyan-400",
   },
   {
     name: "Om Ubrani",
-    role: "Growth & Creative Director",
-    specialty: "MARKET ACQUISITION",
-    bio: "The strategic bridge between your brand and the customer. I specialize in the 'Attention Economy'—capturing eyeballs in crowded markets and converting that raw attention into long-term brand trust.",
+    role: "Creative & Brand Growth Lead",
+    specialty: "CONTENT • SOCIAL • OUTREACH",
+    bio: "I focus on the creative and brand side of growth — helping businesses stay visible, active, and engaging through content, reels, and consistent digital communication.",
     details: [
       {
-        label: "Cinematic Content",
-        desc: "Directing and editing scroll-stopping reels and videos that capture attention in the first 3 seconds of the user journey.",
+        label: "Content Creation & Reels",
+        desc: "Visual content built to improve brand presence, engagement, and social media performance.",
         icon: <Video size={18} />,
       },
       {
-        label: "Strategic Outreach",
-        desc: "Managing high-level client acquisition and identifying untapped market opportunities for aggressive brand expansion.",
+        label: "Social Media & Growth Support",
+        desc: "Support for content planning, business communication, and consistent online brand presence.",
         icon: <Cpu size={18} />,
       },
     ],
     icon: <Video className="text-blue-400" size={32} />,
-    glow: "shadow-[0_0_0_1px_rgba(59,130,246,0.18),0_0_20px_rgba(59,130,246,0.12)]",
-    hoverGlow: "hover:shadow-[0_0_40px_-12px_rgba(59,130,246,0.28)]",
-    border: "border-blue-400/35",
-    accent: "text-blue-400",
+    glow: "shadow-[0_0_0_1px_rgba(59,130,246,0.14),0_0_18px_rgba(59,130,246,0.10)]",
+    hoverGlow: "hover:shadow-[0_0_44px_-10px_rgba(59,130,246,0.32)]",
+    border: "border-blue-400/25",
     badge: "bg-blue-500/10 border-blue-500/20 text-blue-400",
   },
 ];
@@ -92,135 +89,124 @@ export default function Founders() {
       id="architects"
       className="py-32 px-6 max-w-7xl mx-auto scroll-mt-32 relative z-10"
     >
-      {/* Header */}
       <div className="mb-24">
         <motion.div
           initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          viewport={{ once: false, amount: 0.7 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: false, amount: 0.8 }}
+          transition={{ duration: 0.75, delay: 0.24, ease: [0.16, 1, 0.3, 1] }}
         >
-          <h2 className="text-6xl md:text-8xl font-black tracking-tighter italic uppercase text-white leading-none drop-shadow-[0_0_14px_rgba(255,255,255,0.04)]">
-            THE <span className="text-cyan-400">ARCHITECTS.</span>
+          <h2 className="text-6xl md:text-8xl font-black tracking-tighter italic uppercase text-white leading-none">
+            THE <span className="text-cyan-400">TEAM.</span>
           </h2>
 
           <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: "90px" }}
-            viewport={{ once: false, amount: 0.9 }}
-            transition={{ delay: 0.35, duration: 0.85, ease: "circOut" }}
+            viewport={{ once: false, amount: 0.82 }}
+            transition={{ delay: 0.34, duration: 0.6, ease: "circOut" }}
             className="h-[2px] bg-cyan-500 mt-4"
           />
 
           <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.8 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
-            className="text-zinc-600 font-mono text-[10px] tracking-[0.4em] uppercase mt-4"
+            initial={{ opacity: 0, y: 10, filter: "blur(6px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            viewport={{ once: false, amount: 0.82 }}
+            transition={{ delay: 0.42, duration: 0.5 }}
+            className="text-zinc-200 font-mono text-xs tracking-[0.35em] uppercase mt-4"
           >
-            Leadership Engineered for Growth
+            Built for Execution, Consistency & Growth
           </motion.p>
         </motion.div>
       </div>
 
-      {/* Founder Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {founders.map((founder, i) => (
           <motion.div
             key={i}
             layoutId={`card-${founder.name}`}
             onClick={() => setSelectedFounder(founder)}
-            initial={{ opacity: 0, y: 80, scale: 0.94, filter: "blur(10px)" }}
+            initial={{ opacity: 0, y: 80, scale: 0.95, filter: "blur(10px)" }}
             whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
-            viewport={{ once: false, amount: 0.18 }}
+            viewport={{ once: false, amount: 0.72 }}
             transition={{
-              delay: 0.1 + i * 0.12,
-              duration: 0.9,
+              delay: 0.18 + i * 0.08,
+              duration: 0.75,
               ease: [0.16, 1, 0.3, 1],
             }}
-            whileHover={{ y: -8 }}
-            className={`group relative p-10 md:p-12 bg-zinc-950 border rounded-[3.2rem] cursor-pointer transition-all duration-500 overflow-hidden ${founder.border} ${founder.glow} md:border-zinc-800/50 md:shadow-none ${founder.hoverGlow}`}
+            whileHover={{ y: -8, scale: 1.03 }}
+            className={`group relative p-10 md:p-12 bg-zinc-950 border rounded-[3rem] cursor-pointer transition-all duration-150 overflow-hidden ${founder.border} ${founder.glow} ${founder.hoverGlow}`}
           >
-            {/* Ambient glow layer */}
-            <div className="absolute inset-0 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+            <div className="absolute inset-0 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-150 pointer-events-none">
               <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] via-transparent to-transparent blur-2xl" />
             </div>
 
-            {/* Top Row */}
             <div className="mb-10 flex justify-between items-start gap-4 relative z-10">
-              <div className="p-4 bg-zinc-950 rounded-2xl border border-white/10 group-hover:border-white/20 transition-colors">
+              <div className="p-4 bg-zinc-950 rounded-2xl border border-white/10 group-hover:border-white/20 transition-colors duration-150">
                 {founder.icon}
               </div>
 
-              <span
-                className={`px-4 py-1.5 rounded-full text-[9px] font-mono tracking-widest uppercase border ${founder.badge}`}
-              >
+              <span className={`px-4 py-1.5 rounded-full text-[10px] font-mono tracking-widest uppercase border ${founder.badge}`}>
                 {founder.specialty}
               </span>
             </div>
 
-            {/* Name */}
-            <h3 className={`text-4xl md:text-[2.6rem] font-black text-white mb-4 uppercase italic tracking-tighter transition-colors relative z-10`}>
+            <h3 className="text-4xl md:text-[2.6rem] font-black text-white mb-4 uppercase italic tracking-tighter relative z-10">
               {founder.name}
             </h3>
 
-            {/* Role */}
-            <p className="text-zinc-500 font-mono text-[10px] tracking-[0.3em] uppercase mb-6 relative z-10">
+            <p className="text-zinc-200 font-mono text-[11px] tracking-[0.28em] uppercase mb-6 relative z-10">
               {founder.role}
             </p>
 
-            {/* Bio */}
-            <p className="text-zinc-400 text-lg leading-relaxed font-light mb-10 line-clamp-3 relative z-10">
+            <p className="text-zinc-300 text-lg leading-relaxed font-light mb-10 line-clamp-3 relative z-10">
               {founder.bio}
             </p>
 
-            {/* Bottom Strip */}
             <div className="flex items-center gap-3 relative z-10">
               <div className="h-px flex-1 bg-zinc-800" />
-              <span className="text-[9px] font-mono text-cyan-500 uppercase tracking-[0.2em] opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
+              <span className="text-sm font-mono text-cyan-400 uppercase tracking-[0.22em] opacity-100 drop-shadow-[0_0_12px_rgba(6,182,212,0.5)] animate-pulse">
                 Tap to View Details
               </span>
-              <ArrowRight size={12} className="text-cyan-500" />
+              <ArrowRight size={16} className="text-cyan-500" />
             </div>
           </motion.div>
         ))}
       </div>
 
-      {/* Modal */}
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {selectedFounder && (
-          <div className="fixed inset-0 z-[1000] flex items-start md:items-center justify-center pt-24 md:pt-0 p-4 md:p-12">
-            {/* Backdrop */}
+          <div className="fixed inset-0 z-[1000] flex items-center justify-center p-4 md:p-8">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              transition={{ duration: 0.16 }}
               onClick={() => setSelectedFounder(null)}
               className="absolute inset-0 bg-black/85 backdrop-blur-xl"
             />
 
-            {/* Modal Card */}
             <motion.div
-              layoutId={`card-${selectedFounder.name}`}
+              initial={{ opacity: 0, scale: 0.97, y: 16 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.97, y: 16 }}
               transition={{
-                duration: 0.5,
+                duration: 0.22,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="relative w-full max-w-5xl max-h-[78vh] md:max-h-[88vh] bg-zinc-950/50 backdrop-blur-3xl border border-white/10 rounded-[2rem] md:rounded-[4rem] shadow-[0_0_80px_rgba(0,0,0,0.45)] flex flex-col overflow-hidden"
+              className="relative w-full max-w-3xl max-h-[78vh] bg-zinc-950/85 backdrop-blur-2xl border border-cyan-400/20 rounded-[2rem] shadow-[0_0_80px_rgba(0,0,0,0.45)] flex flex-col overflow-hidden mt-16 md:mt-0"
             >
-              {/* Modal Header */}
-              <div className="p-6 md:p-14 pb-6 md:pb-8 flex justify-between items-center border-b border-white/5 bg-white/[0.015]">
-                <div className="flex items-center gap-4 md:gap-8">
-                  <div className="p-3 md:p-4 bg-black/40 rounded-2xl border border-white/10 text-cyan-400">
+              <div className="p-5 md:p-8 flex justify-between items-center border-b border-white/5 bg-white/[0.015]">
+                <div className="flex items-center gap-4 md:gap-6 min-w-0">
+                  <div className="p-3 bg-black/40 rounded-2xl border border-white/10 text-cyan-400 shrink-0">
                     {selectedFounder.icon}
                   </div>
 
-                  <div>
-                    <h3 className="text-xl md:text-5xl font-black text-white uppercase tracking-tighter leading-none">
+                  <div className="min-w-0">
+                    <h3 className="text-lg md:text-3xl font-black text-white uppercase tracking-tighter leading-none truncate">
                       {selectedFounder.name}
                     </h3>
-                    <p className="text-cyan-400 font-mono text-[9px] md:text-[10px] tracking-[0.25em] md:tracking-[0.3em] uppercase mt-2">
+                    <p className="text-cyan-400 font-mono text-[9px] md:text-[10px] tracking-[0.22em] uppercase mt-2">
                       {selectedFounder.role}
                     </p>
                   </div>
@@ -228,40 +214,39 @@ export default function Founders() {
 
                 <button
                   onClick={() => setSelectedFounder(null)}
-                  className="p-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-white transition-all active:scale-95 shrink-0"
+                  className="p-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-white transition-all duration-150 active:scale-95 shrink-0"
                 >
-                  <X size={20} />
+                  <X size={18} />
                 </button>
               </div>
 
-              {/* Modal Content */}
-              <div className="flex-1 overflow-y-auto p-6 md:p-14 space-y-10 md:space-y-14">
+              <div className="flex-1 overflow-y-auto p-5 md:p-8 space-y-8">
                 <section>
-                  <h4 className="text-zinc-600 font-mono text-[9px] uppercase tracking-[0.5em] mb-5 md:mb-6">
-                    Strategic Mission
+                  <h4 className="text-zinc-200 font-mono text-xs uppercase tracking-[0.35em] mb-4">
+                    Role Overview
                   </h4>
-                  <p className="text-zinc-300 text-base md:text-2xl leading-relaxed font-normal">
+                  <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-normal">
                     {selectedFounder.bio}
                   </p>
                 </section>
 
                 <section>
-                  <h4 className="text-zinc-600 font-mono text-[9px] uppercase tracking-[0.5em] mb-6 md:mb-8">
-                    Technical Impact
+                  <h4 className="text-zinc-200 font-mono text-xs uppercase tracking-[0.35em] mb-5">
+                    Key Responsibilities
                   </h4>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {selectedFounder.details.map((detail, idx) => (
                       <motion.div
                         key={idx}
-                        initial={{ opacity: 0, y: 30, scale: 0.97 }}
+                        initial={{ opacity: 0, y: 20, scale: 0.98 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         transition={{
-                          duration: 0.55,
-                          delay: 0.08 * idx,
+                          duration: 0.28,
+                          delay: 0.03 * idx,
                           ease: [0.16, 1, 0.3, 1],
                         }}
-                        className="flex flex-col p-6 md:p-8 bg-white/[0.025] rounded-[1.8rem] md:rounded-[2.2rem] border border-white/5"
+                        className="flex flex-col p-5 bg-white/[0.025] rounded-[1.6rem] border border-white/5"
                       >
                         <div className="mb-4 text-cyan-500 opacity-90">
                           {detail.icon}
@@ -280,20 +265,19 @@ export default function Founders() {
                 </section>
               </div>
 
-              {/* Modal Footer */}
-              <div className="p-6 md:p-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center bg-black/20 gap-4 md:gap-6">
+              <div className="p-5 md:p-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center bg-black/20 gap-4">
                 <div className="flex items-center gap-3 text-zinc-500 text-center md:text-left">
                   <ShieldCheck size={16} className="text-emerald-500 shrink-0" />
-                  <span className="text-[9px] font-mono uppercase tracking-[0.25em] md:tracking-[0.3em]">
-                    Verified Growth Partner
+                  <span className="text-[10px] font-mono uppercase tracking-[0.25em]">
+                    Reliable Growth Support Team
                   </span>
                 </div>
 
                 <button
                   onClick={() => setSelectedFounder(null)}
-                  className="w-full md:w-auto px-8 md:px-12 py-4 md:py-5 bg-white text-black font-black text-[10px] uppercase tracking-[0.2em] rounded-full hover:bg-cyan-400 transition-all active:scale-95"
+                  className="w-full md:w-auto px-8 py-4 bg-white text-black font-black text-[10px] uppercase tracking-[0.2em] rounded-full hover:bg-cyan-400 transition-all duration-150 active:scale-95"
                 >
-                  Return to Dashboard
+                  Return
                 </button>
               </div>
             </motion.div>

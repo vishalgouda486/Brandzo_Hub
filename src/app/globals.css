@@ -1,13 +1,11 @@
 @import "tailwindcss";
 
-/* 1. Simplify the Theme */
 @theme {
   --color-background: #050505;
   --color-accent: #00f2ff;
   --color-foreground: #ffffff;
 }
 
-/* 2. Lock the Layout */
 @layer base {
   :root {
     --background: #050505;
@@ -22,6 +20,10 @@
     cursor: none !important;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     background: var(--background);
     color: var(--foreground);
@@ -30,6 +32,11 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+  a,
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 
 ::selection {
@@ -37,7 +44,23 @@
   color: white;
 }
 
-/* 3. PRODUCTION-SAFE GLOWS */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(6, 182, 212, 0.35);
+}
+
 .shadow-glow {
   box-shadow:
     0 0 10px rgba(6, 182, 212, 0.25),
@@ -60,7 +83,6 @@
     0 0 45px rgba(59, 130, 246, 0.25) !important;
 }
 
-/* Hover glow for marquee / cards / tiles */
 .hover-blue-glow:hover {
   box-shadow:
     0 0 10px rgba(59, 130, 246, 0.25),
@@ -70,14 +92,19 @@
     0 0 10px rgba(59, 130, 246, 0.25),
     0 0 25px rgba(59, 130, 246, 0.45),
     0 0 45px rgba(59, 130, 246, 0.25) !important;
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.2s ease;
 }
 
-/* 4. Rest of your animations */
 @keyframes gradient-x {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .animate-gradient-x {
@@ -86,12 +113,24 @@
 }
 
 @keyframes glitch {
-  0% { transform: translate(0); }
-  20% { transform: translate(-2px, 2px); }
-  40% { transform: translate(-2px, -2px); }
-  60% { transform: translate(2px, 2px); }
-  80% { transform: translate(2px, -2px); }
-  100% { transform: translate(0); }
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
 }
 
 .glitch-hover:hover {
